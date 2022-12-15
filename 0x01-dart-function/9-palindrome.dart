@@ -1,16 +1,13 @@
 bool isPalindrome(String s) {
-
-if (s.length < 3)
+  int len = s.length - 1;
+  if (len < 3) {
     return false;
-
-  String inReverse = "";
-  
-  for (var idx = s.length - 1; idx >= 0; idx--) {
-    inReverse += s[idx];
   }
-  if (inReverse == s)
-    return true;
-    
-  else
-       return false;
+  int end = len ~/ 2;
+  for (int i = 0; i < end; i++) {
+    if (s[i] != s[len - i]) {
+      return false;
+    }
+  }
+  return true;
 }

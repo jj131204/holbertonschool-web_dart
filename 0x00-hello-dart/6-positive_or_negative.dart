@@ -1,11 +1,11 @@
 void main(List<String> args) {
-  var num = int.parse(args[0]);
-
-  if (num > 0) {
-    print("$num is positive");
-  } else if (num < 0) {
-    print("$num is negative");
+  // Change This Line (Do Not Change The Variable )
+  var number = int.parse(args[0]);
+  if (number == 0) {
+    print("$number is zero");
+  } else if (number > 0) {
+    print("$number is positive");
   } else {
-    print("0 is zero");
+    print("$number is negative");
   }
 }

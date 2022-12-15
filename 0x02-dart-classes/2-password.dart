@@ -2,13 +2,17 @@ class Password {
   String password = "";
 
   bool isValid() {
-     return ((password.length >= 8) &&
-     (password.length <= 16)) &&
-        this.password.contains(new RegExp(r"[A-Z]"))
-	&& this.password.contains(new RegExp(r"[a-z]"))
-	&& this.password.contains(new RegExp(r"[0-9]"));
+    if (this.password.length > 6 && this.password.length < 18) {
+      if (this.password.contains(RegExp(r'[a-zA-Z]'))) {
+        if (this.password.contains(RegExp(r'\d'))) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
-
   @override
-  String toString() => "Your Password is: ${this.password}";
+  String toString() {
+    return "Your Password is: ${this.password}";
+  }
 }

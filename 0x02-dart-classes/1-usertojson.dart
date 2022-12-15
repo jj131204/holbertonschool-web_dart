@@ -1,12 +1,13 @@
- class User {
+class User {
+  User({required this.name, required this.age, required this.height});
   String name;
   int age;
   double height;
-  
-  User({required this.name, required this.age, required this.height});
-  Map toJson() => {
-        'name': name,
-        'age': age,
-	'height': height,
-      };
+  Map toJson() {
+    return {"name": name, "age": age, "height": height};
+  }
+
+  String showName() {
+    return "Hello $name";
+  }
 }
